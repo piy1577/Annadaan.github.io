@@ -1,0 +1,17 @@
+*,
+*::before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import "./styles/Footer.scss";
+@import "./styles/Header.scss";
+@import "./styles/Home.scss";
+@import "./styles/Login.scss";
+@import "./styles/MediaQuery.scss";
+@import "./styles/Ngo.scss";
+@import "./styles/Search.scss";
+@import "./styles/Signup.scss";
+@import "./styles/Upload.scss";
