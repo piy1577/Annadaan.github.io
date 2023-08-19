@@ -6,8 +6,6 @@ const authSlice = createSlice({
         isAuthenticated: false,
         name: "guest",
         email: "",
-        profileImage:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWnW0NUpcrZcGZeUJ4e50ZLU8ugS9GPPoqww&usqp=CAU",
     },
     reducers: {
         login(state, action) {
@@ -20,8 +18,6 @@ const authSlice = createSlice({
             state.isAuthenticated = false;
             state.name = "guest";
             state.email = "";
-            state.profileImage =
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWnW0NUpcrZcGZeUJ4e50ZLU8ugS9GPPoqww&usqp=CAU";
         },
     },
 });

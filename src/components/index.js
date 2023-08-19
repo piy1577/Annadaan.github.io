@@ -6,5 +6,6 @@ import Ngo from "./Ngo/Ngo";
 import Search from "./Search/Search";
 import Signup from "./Signup/Signup";
 import Upload from "./Upload/Upload";
+import * as request from "./http_requests";
 
-export { Footer, Header, Home, Login, Ngo, Search, Signup, Upload };
+export { Footer, Header, Home, Login, Ngo, Search, Signup, Upload, request };

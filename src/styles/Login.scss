@@ -1,0 +1,21 @@
+.login {
+    > .inputs {
+        > label {
+            > span {
+                color: red;
+            }
+        }
+        > input {
+        }
+    }
+    > .checkbox {
+        > input {
+        }
+        > label {
+        }
+    }
+    > .btn {
+        > input {
+        }
+    }
+}
