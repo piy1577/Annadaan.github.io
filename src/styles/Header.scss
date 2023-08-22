@@ -1,0 +1,12 @@
+$primarybtn: rgb(58, 42, 42);
+$textColor: rgb(182, 85, 42);
+
+header {
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    color: $textColor;
+    button {
+        background: $primarybtn;
+    }
+}
