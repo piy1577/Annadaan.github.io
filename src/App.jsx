@@ -1,33 +1,24 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import {
-    Footer,
-    Header,
-    Home,
-    Login,
-    Ngo,
-    Search,
-    Signup,
-    Upload,
-} from "./components";
+import * as pages from "./components";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: (
             <>
-                <Header />
+                <pages.Header />
                 <Outlet />
-                <Footer />
+                <pages.Footer />
             </>
         ),
         children: [
-            { index: true, element: <Home /> },
-            { path: "/login", element: <Login /> },
-            { path: "/signup", element: <Signup /> },
-            { path: "/upload", element: <Upload /> },
-            { path: "/search", element: <Search /> },
-            { path: "/ngo/:id", element: <Ngo /> },
+            { index: true, element: <pages.Home /> },
+            { path: "/login", element: <pages.Login /> },
+            { path: "/signup", element: <pages.Signup /> },
+            { path: "/upload", element: <pages.Upload /> },
+            { path: "/search", element: <pages.Search /> },
+            { path: "/ngo/:id", element: <pages.Ngo /> },
         ],
     },
 ]);
