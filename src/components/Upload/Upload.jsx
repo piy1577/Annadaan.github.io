@@ -114,8 +114,10 @@ const Upload = () => {
                     required
                 >
                     <option>Select a location</option>
-                    {states.map((item) => (
-                        <option value={item}>{item}</option>
+                    {states.map((item, i) => (
+                        <option key={i} value={item}>
+                            {item}
+                        </option>
                     ))}
                 </select>
             </div>

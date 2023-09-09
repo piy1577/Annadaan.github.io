@@ -1,150 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.head {
+    > .header {
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+        height: 60px;
 
-// /* Header.scss */
-// .header {
-//     background-color: #333;
-//     color: white;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 10px 20px;
-//     position: relative;
-
-//     .logo {
-//         a {
-//             display: flex;
-//             align-items: center;
-//             text-decoration: none;
-//             color: white;
-
-//             img {
-//                 margin-right: 10px;
-//                 height: 30px; /* Adjust the height as needed */
-//             }
-//         }
-//     }
-
-//     /* Hide the menu card by default */
-//     .menu-card {
-//         display: none;
-//     }
-
-//     .menu {
-//         display: flex;
-//         flex-direction: column;
-//         cursor: pointer;
-
-//         span {
-//             width: 30px;
-//             height: 3px;
-//             background-color: white;
-//             margin: 3px 0;
-//         }
-//     }
-
-//     @media screen and (max-width: 768px) {
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: flex-start;
-//         padding: 20px;
-
-//         .menu-card.open {
-//             background-color: #001f3f; /* Dark blue color for the card */
-//             display: block;
-//             width: 100%;
-//         }
-
-//         ul.nav-list {
-//             list-style: none;
-//             padding: 0;
-//             margin: 0;
-
-//             li {
-//                 margin: 0;
-//                 padding: 10px 20px;
-
-//                 a {
-//                     text-decoration: none;
-//                     color: white;
-//                     display: block;
-
-//                     &:hover {
-//                         color: #ff6600;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-/* Header.scss */
-
-/* Header.scss */
-.header {
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: relative;
-    height: 60px;
-
-    .logo {
-        a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-
-            img {
-                margin-right: 10px;
-                height: 30px; /* Adjust the height as needed */
-            }
-        }
-    }
-
-    .menu {
-        display: none; /* Hide the menu button by default on larger screens */
-        cursor: pointer;
-
-        span {
-            width: 30px;
-            height: 3px;
-            background-color: white;
-            margin: 3px 0;
-        }
-    }
-
-    ul.nav-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex; /* Display the navigation list horizontally on larger screens */
-
-        li {
-            margin: 0;
-            padding: 10px 20px;
-
+        > .logo {
             a {
+                display: flex;
+                align-items: center;
                 text-decoration: none;
                 color: white;
 
-                &:hover {
-                    color: #ff6600;
+                img {
+                    margin-right: 10px;
+                    height: 30px; /* Adjust the height as needed */
                 }
             }
         }
-    }
 
-    &.open {
-        .menu-card {
-            background-color: #001f3f; /* Dark blue color for the card */
-            display: block; /* Show the menu card when the 'open' class is applied */
-            width: 100%;
+        > .menu {
+            display: none; /* Hide the menu button by default on larger screens */
+            cursor: pointer;
+
+            span {
+                width: 30px;
+                height: 3px;
+                background-color: white;
+                margin: 3px 0;
+            }
         }
 
         ul.nav-list {
-            flex-direction: column; /* Display the navigation list vertically when the 'open' class is applied */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Display the navigation list horizontally on larger screens */
 
             li {
                 margin: 0;
@@ -153,7 +49,6 @@
                 a {
                     text-decoration: none;
                     color: white;
-                    display: block;
 
                     &:hover {
                         color: #ff6600;
@@ -161,11 +56,38 @@
                 }
             }
         }
-    }
 
-    @media screen and (max-width: 768px) {
-        .menu {
-            display: flex; /* Display the menu button on smaller screens */
+        &.open {
+            .menu-card {
+                background-color: #001f3f; /* Dark blue color for the card */
+                display: block; /* Show the menu card when the 'open' class is applied */
+                width: 100%;
+            }
+
+            ul.nav-list {
+                flex-direction: column; /* Display the navigation list vertically when the 'open' class is applied */
+
+                li {
+                    margin: 0;
+                    padding: 10px 20px;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        display: block;
+
+                        &:hover {
+                            color: #ff6600;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: flex; /* Display the menu button on smaller screens */
+            }
         }
     }
 }
