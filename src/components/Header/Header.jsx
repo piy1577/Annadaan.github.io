@@ -1,46 +1,59 @@
-import React, { useState } from "react";
-import "../../styles/Header.scss";
+import React, { useState, useEffect } from "react";
+//import "../../styles/Header.scss";
 import img2 from "../../Images/logo.png";
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [toggleMenu, setToggleMenu] = useState(false);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
+    const toggleNav = () => {
+        setToggleMenu(!toggleMenu);
     };
+    useEffect(() => {
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", changeWidth);
+
+        return () => {
+            window.removeEventListener("resize", changeWidth);
+        };
+    }, []);
 
     return (
-        <div className="head">
-            <header className={`header ${menuOpen ? "open" : ""}`}>
+        //<div className="head">
+        <header className="header">
+            <div className="container">
                 <div className="logo">
                     <a href="#">
                         <img src={img2} alt="logo" />
-                        Annadan
                     </a>
                 </div>
-                <div className="menu" onClick={toggleMenu}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/Contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="/Search">Search</a>
-                    </li>
-                    <li>
-                        <a href="/Login">Login</a>
-                    </li>
-                    <li>
-                        <a href="/Signup">Signup</a>
-                    </li>
-                </ul>
-            </header>
-        </div>
+                {(toggleMenu || screenWidth > 500) && (
+                    <ul className="list">
+                        <li className="items">
+                            <a href="/">Home</a>
+                        </li>
+                        <li className="items">
+                            <a href="/Contact">Contact</a>
+                        </li>
+                        <li className="items">
+                            <a href="/Search">Search</a>
+                        </li>
+                        <li className="items">
+                            <a href="/Login">Login</a>
+                        </li>
+                        <li className="items">
+                            <a href="/Signup">Signup</a>
+                        </li>
+                    </ul>
+                )}
+                <button onClick={toggleNav} className="btn">
+                    BTN
+                </button>
+            </div>
+        </header>
+        //</div>
     );
 };
 
