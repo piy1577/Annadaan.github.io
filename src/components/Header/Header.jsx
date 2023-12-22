@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-//import "../../styles/Header.scss";
-import img2 from "../../Images/logo.png";
+import "../../styles/Header.scss";
+import img2 from "../../Images/logo.jpg";
 const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -17,7 +17,7 @@ const Header = () => {
 
         return () => {
             window.removeEventListener("resize", changeWidth);
-        };
+        }; 
     }, []);
 
     return (
